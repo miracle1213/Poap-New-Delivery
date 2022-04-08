@@ -7,12 +7,14 @@ import { useStyles } from './style'
 import Home from '../../pages/Home'
 import Header from '../Header'
 import Detail from '../../pages/Detail'
+import Faq from '../../pages/Faq'
 
 const switchRoutes = (
   <div>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/detail" component={Detail} />
+      <Route exact path="/faq" component={Faq} />
     </Switch>
   </div>
 )
@@ -29,7 +31,9 @@ const Dashboard = () => {
           position: 'relative',
         }}
       >
-        <Header />
+        <div style={{ zIndex: 50 }}>
+          <Header />
+        </div>
         <Box>{switchRoutes}</Box>
       </div>
     </Router>

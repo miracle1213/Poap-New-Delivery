@@ -1,62 +1,80 @@
 import { Theme, makeStyles } from '@material-ui/core/styles'
-import DesktopImage from '../../assets/images/land_desktop.svg'
-import MobileImage from '../../assets/images/land_mobile.svg'
+import DesktopImage from '../../assets/images/pittsburg.png'
+// import MobileImage from '../../assets/images/berlin.png'
 
 export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     paddingTop: 4,
     display: 'block',
-    marginTop: '-88px',
     '@media (max-width:768px)': {
       marginTop: 0,
     },
   },
   topContainer: {
-    padding: '48px 16px 32px',
-    marginTop: 76,
-    minHeight: 440,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    background: `transparent url(${MobileImage}) no-repeat top`,
-    backgroundSize: 'contain',
-    marginBottom: '48px',
-    '@media (min-width:768px)': {
-      marginTop: 0,
-      padding: '32px 32px 64px',
-      backgroundPosition: '100% 0',
-      background: `transparent url(${DesktopImage}) no-repeat 100%`,
+    width: '100%',
+    paddingTop: 25,
+    position: 'relative',
+  },
+  background: {
+    '@media (min-width: 1200px)': {
+      backgroundPosition: 'right -201px top 0px',
     },
+    '@media (max-width: 1200px)': {
+      backgroundPosition: 'right -400px top 0px',
+    },
+    '@media (max-width: 960px)': {
+      backgroundPosition: 'right -600px top 0px',
+    },
+    '@media (max-width: 800px)': {
+      height: 'calc(140vw)',
+      backgroundPosition: 'right -900px top 0px',
+    },
+    height: 'calc(140vw)',
+    position: 'absolute',
+    zIndex: -2,
+    left: 0,
+    backgroundImage: `url(${DesktopImage})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 1500,
+    opacity: 0.6,
+    width: '100%',
+    top: -190,
+  },
+  background2: {
+    position: 'absolute',
+    pointerEvents: 'none',
+    zIndex: -2,
+    width: '100%',
+    right: 0,
+    top: 380,
+    height: 537,
+    background:
+      'linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255) 40%, rgb(255, 255, 255))',
+  },
+  div: {
+    textAlign: 'left',
+    paddingTop: 100,
+    paddingLeft: 162,
+    paddingRight: 162,
   },
   title: {
-    color: '#48558b',
-    fontSize: 28,
-    lingHeight: '46px',
-    fontWeight: 400,
-    marginBottom: 24,
-    '@media (min-width:768px)': {
-      fontSize: 46,
-      textAlign: 'left',
-    },
+    color: '#8076fa',
+    fontSize: 48,
+    lingHeight: '54px',
+    maxWidth: 380,
   },
   subTitle: {
-    color: '#8492ce',
-    fontSize: 16,
-    lingHeight: '24px',
-    textAlign: 'center',
-    paddingLeft: 16,
-    paddingRight: 16,
-    '@media (min-width:768px)': {
-      padding: 0,
-      textAlign: 'left',
-    },
+    color: '#f9879a',
+    fontSize: 20,
+    lingHeight: '27px',
+    fontWeight: 600,
+    marginTop: 24,
+    maxWidth: 380,
   },
-  discordLink: {
-    color: '#3fbaef',
-    textDecoration: 'none',
-    '&:hover': {
-      textDecoration: 'revert',
-    },
+  subTitle2: {
+    color: '#8492ce',
+    marginTop: 27,
+    maxWidth: 380,
   },
   linkDiv: {
     marginTop: '-160px',
@@ -94,31 +112,56 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 7,
   },
   cardGroupDiv: {
-    padding: 16,
-    position: 'relative',
-    '@media (min-width:1024px)': {
-      padding: 32,
-    },
-    '@media (min-width:768px)': {
-      padding: 24,
-    },
+    width: '100%',
+    paddingBottom: 100,
+    marginTop: 160,
   },
   cardContainer: {
-    // justifyContent: 'space-between',
-    // [theme.breakpoints.up(1024)]: {
-    //   gridTemplateColumns: 'repeat(3,1fr)',
-    //   gridGap: '32px',
-    //   display: 'grid',
-    // },
-    // [theme.breakpoints.down(1024)]: {
-    //   gridTemplateColumns: 'repeat(2,1fr)',
-    //   gridGap: '24px',
-    //   display: 'grid',
-    // },
-    // [theme.breakpoints.down(768)]: {
-    //   display: 'grid',
-    //   gap: 16,
-    //   animation: 'show-up .35s ease',
-    // },
+    '@media (min-width:1200px)': {
+      width: '100%',
+      padding: '0px 64px',
+    },
+    '@media (max-width:1200px)': {
+      width: '100%',
+      padding: '0px 64px',
+    },
+    '@media (max-width:960px)': {
+      width: '100%',
+      padding: '0px 50px',
+    },
+    '@media (max-width:800px)': {
+      width: '100%',
+      padding: '0px 30px',
+    },
+    width: '100%',
+    maxWidth: '1600px',
+    margin: '0px auto',
+    padding: '0px 30px',
+  },
+  searchDiv: {
+    position: 'relative',
+    gridArea: '2 / 1 / 3 / 3',
+    placeSelf: 'end stretch',
+    marginBottom: '0.5rem',
+    color: 'rgb(77, 86, 128)',
+  },
+  searchDiv1: {
+    width: '200px',
+    height: 28,
+    padding: 12,
+    border: '2px solid rgb(196, 202, 232)',
+    borderRadius: 4,
+    transition: 'right 0.2s ease-out 0s',
+    background: '#fff',
+    justifyContent: 'left',
+    margin: '0px 0px 16px',
+  },
+  input: {
+    border: 'none',
+    color: 'rgb(128, 118, 250)',
+    height: '100%',
+    '&:focus-visible': {
+      outline: 'none',
+    },
   },
 }))

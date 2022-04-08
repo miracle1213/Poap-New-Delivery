@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { Typography, Button, Grid } from '@material-ui/core'
+import SearchIcon from '@material-ui/icons/Search'
 // constant
 import { Tab } from '../../config/constants'
 // style
@@ -20,49 +21,31 @@ function Home() {
   return (
     <div className={classes.root}>
       <div className={classes.topContainer}>
-        <Typography className={classes.title}>Welcome to POAP.art</Typography>
-        <Typography className={classes.subTitle}>
-          Enjoy your journey across the intersection of art and tech.
-        </Typography>
-        <Typography className={classes.subTitle}>
-          Join us at{' '}
-          <Link to="/" className={classes.discordLink}>
-            poap.art/discord
-          </Link>
-        </Typography>
-      </div>
-
-      <div className={classes.linkDiv}>
-        <div className={classes.tabDviv}>
-          <Button
-            className={clsx(classes.tabBtn, {
-              [classes.activeTab]: tabNum === Tab.OPEN,
-            })}
-            onClick={() => handleTab(Tab.OPEN)}
-          >
-            Open<span className={classes.count}>12</span>
-          </Button>
-          <Button
-            className={clsx(classes.tabBtn, {
-              [classes.activeTab]: tabNum === Tab.SOON,
-            })}
-            onClick={() => handleTab(Tab.SOON)}
-          >
-            Soon<span className={classes.count}>12</span>
-          </Button>
-          <Button
-            className={clsx(classes.tabBtn, {
-              [classes.activeTab]: tabNum === Tab.CLOSED,
-            })}
-            onClick={() => handleTab(Tab.CLOSED)}
-          >
-            Closed<span className={classes.count}>12</span>
-          </Button>
+        <div className={classes.background} />
+        <div className={classes.background2} />
+        <div className={classes.div}>
+          <Typography className={classes.title}>POAP Delivery</Typography>
+          <Typography className={classes.subTitle}>
+            Get your POAP to remember that historic event you've been part of.
+          </Typography>
+          <Typography className={classes.subTitle2}>
+            The airdrop based on Merkle trees allow us to honor the participants
+            of those events with special POAPs.
+          </Typography>
+          <Typography className={classes.subTitle2}>
+            Check out the events below and claim yours!
+          </Typography>
         </div>
       </div>
 
       <div className={classes.cardGroupDiv}>
         <Grid container spacing={5} className={classes.cardContainer}>
+          <Grid item xs={12} className={classes.searchDiv}>
+            <div className={classes.searchDiv1}>
+              <input placeholder="Search.." className={classes.input} />
+              <SearchIcon style={{ verticalAlign: 'middle' }} />
+            </div>
+          </Grid>
           {['1', '2', '3', '1', '2', '3', '1', '2'].map(
             (item: any, key: any) => (
               <Grid item xl={3} lg={4} md={6} sm={12} key={key}>

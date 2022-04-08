@@ -1,74 +1,97 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import SampleImg from '../assets/images/sampleImg.jpg'
+import CardHeaderImg from '../assets/images/cardheader.svg'
 import Avatar from '../assets/images/motor.jpg'
-import { Typography, Card } from '@material-ui/core'
+import { Typography, Card, Button } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     position: 'relative',
     background: '#fff',
-    borderRadius: 16,
-    boxShadow: '0 0 32px rgb(0 0 0 / 8%)',
+    borderRadius: 46,
+    boxShadow: 'rgb(187 196 239 / 35%) 0px 4px 16px 0px',
     // maxWidth: 384,
     marginBottom: 20,
-    transform: 'translateZ(0)',
-    transition: 'transform .3s cubic-bezier(.2,1,.3,1)',
-    backgroundImage:
-      'radial-gradient(at 50% 25%,var(--card-radial-color) 40%,transparent 80%)',
+    backgroundImage: '#fff',
     overflow: 'hidden',
     cursor: 'pointer',
     '&:hover': {
       transform: 'translateY(-2px)',
     },
   },
-  imgDiv: {
-    borderTopLeftRadius: 16,
-    borderTopRightRadius: 16,
-  },
-  img: {
-    position: 'relative',
-    background: '#fff',
+  header: {
     width: '100%',
-    height: '100%',
-    boxShadow: '0 0 24px rgb(0 0 0 / 6%)',
-  },
-  contain: {
-    padding: '24px 16px',
-  },
-  lgText: {
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    fontSize: 22,
-    lineHeight: '24px',
-    color: '#48558b',
-    width: '100%',
-    maxWidth: '100%',
-    fontWeight: 400,
-    marginBottom: 4,
-  },
-  smText: {
-    color: '#8492ce',
-    fontSize: 12,
-    marginRight: 8,
-  },
-  infoDiv: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  mdText: {
-    color: '#48558b',
-    fontSize: 14,
-    paddingTop: 4,
+    height: 146,
+    backgroundImage: `url(${CardHeaderImg})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+    textAlign: 'center',
+    '@media (max-width:768px)': {
+      backgroundSize: 'cover',
+    },
   },
   avatar: {
-    width: 32,
-    height: 32,
+    width: 130,
+    height: 130,
+    marginTop: 60,
     borderRadius: '50%',
-    border: '1px solid #fff',
-    background: '#eee',
+    objectFit: 'cover',
+    border: '4px solid white',
+    background: '#fff',
+  },
+  container: {
+    width: '100%',
+    padding: 8,
+    boxSizing: 'border-box',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 600,
+    lineHeight: '27px',
+    color: '#8076fa',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  },
+  titleDiv: {
+    height: '50px',
+    maxWidth: '100%',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+    marginTop: 50,
+    borderBottom: '1px solid #e6edfe',
+  },
+  textContainer: {
+    overflow: 'hidden',
+    width: '100%',
+    display: 'grid',
+    alignItems: 'center',
+    marginTop: 3,
+    boxSizing: 'border-box',
+    marginBottom: 10,
+    padding: '0px 16px',
+  },
+  textDiv1: {
+    height: 105,
+    overflow: 'hidden scroll',
+    padding: '16px',
+  },
+  text: {
+    color: '#6873a4',
+    lineHeight: '24px',
+    fontSize: '1rem',
+  },
+  btn: {
+    width: '100%',
+    borderRadius: '50px',
+    fontWeight: 400,
+    padding: '8px 0px',
+    lineHeight: '1.2rem',
+    border: '1px solid #9289ff',
+    color: '#9289ff',
+    background: '#fff',
+    marginTop: 20,
   },
 }))
 
@@ -77,19 +100,27 @@ function HomeCard() {
 
   return (
     <Card className={classes.root}>
-      <div className={classes.imgDiv}>
-        <img src={Avatar} alt="sample" className={classes.img} />
+      <div className={classes.header}>
+        <img src={Avatar} alt="sample" className={classes.avatar} />
       </div>
-      <div className={classes.contain}>
-        <div style={{ marginBottom: 16 }}>
-          <Typography className={classes.lgText}>
-            POPAathon's International Women's City
+      <div className={classes.container}>
+        <div className={classes.titleDiv}>
+          <Typography className={classes.title}>
+            Das NFT-Zertifikat ist dein Nachweis über die erfolgreiche Teilnahme
+            an der web3 & NFT Masterclass.Das NFT-Zertifikat ist dein Nachweis
+            über die erfolgreiche Teilnahme an der web3 & NFT Masterclass.
           </Typography>
-          <Typography className={classes.smText}>256X256</Typography>
         </div>
-        <div className={classes.infoDiv}>
-          <Typography className={classes.mdText}>Closed 25days ago</Typography>
-          <img src={Avatar} alt="avatar" className={classes.avatar} />
+        <div className={classes.textContainer}>
+          <div className={classes.textDiv1}>
+            <Typography className={classes.text}>
+              Das NFT-Zertifikat ist dein Nachweis über die erfolgreiche
+              Teilnahme an der web3 & NFT Masterclass.Das NFT-Zertifikat ist
+              dein Nachweis über die erfolgreiche Teilnahme an der web3 & NFT
+              Masterclass.
+            </Typography>
+          </div>
+          <Button className={classes.btn}>Claim your POAP</Button>
         </div>
       </div>
     </Card>
