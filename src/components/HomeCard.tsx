@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import CardHeaderImg from '../assets/images/cardheader.svg'
 import Avatar from '../assets/images/motor.jpg'
+import { useHistory } from 'react-router-dom'
 import { Typography, Card, Button } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -97,6 +98,10 @@ const useStyles = makeStyles((theme) => ({
 
 function HomeCard() {
   const classes = useStyles()
+  const history = useHistory()
+  const handleClaim = () => {
+    history.push('/detail')
+  }
 
   return (
     <Card className={classes.root}>
@@ -120,7 +125,9 @@ function HomeCard() {
               Masterclass.
             </Typography>
           </div>
-          <Button className={classes.btn}>Claim your POAP</Button>
+          <Button className={classes.btn} onClick={handleClaim}>
+            Claim your POAP
+          </Button>
         </div>
       </div>
     </Card>

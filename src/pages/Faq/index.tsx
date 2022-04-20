@@ -140,7 +140,37 @@ function Faq() {
         </div>
 
         <div className={classes.rowDiv}>
-          <div style={{ flex: '1 1 0%' }}></div>
+          <div style={{ flex: '1 1 0%' }}>
+            <div style={{ textAlign: 'center', padding: 20 }}>
+              <img src={Image5} alt="image1" className={classes.imageDiv} />
+            </div>
+          </div>
+        </div>
+
+        <div className={classes.rowDiv}>
+          <div style={{ flex: '1 1 0%' }}>
+            <div style={{ padding: 20 }}>
+              <Typography className={classes.title}>
+                How can I use POAP for my event?
+              </Typography>
+              <Typography className={classes.text}>
+                If you want to use POAP to distribute attendance badges at your
+                event, contact us so we can hook you up. All you need to provide
+                is a badge design and some event metadata (event name, location,
+                date).
+              </Typography>
+            </div>
+          </div>
+          <div style={{ flex: '1 1 0%' }}>
+            <div style={{ padding: 20 }}>
+              <Typography className={classes.title}>
+                How much does POAP cost?
+              </Typography>
+              <Typography className={classes.text}>
+                POAP is free! It's an open source community initiative.
+              </Typography>
+            </div>
+          </div>
         </div>
       </div>
     </div>
